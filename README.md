@@ -1,7 +1,7 @@
 # 📚 Stack
 
 <p align="center">
-  <img src="screenshots/dashboard.png" width="700" alt="Stack Dashboard">
+  <img src="Screenshots/dashboard.png" width="700" alt="Stack Dashboard">
 </p>
 
 <p align="center">
@@ -84,6 +84,7 @@ root
     │   └── 📄 main.jsx        # Entry Point
     ├── 📄 package.json        # Node Dependencies
     └── 📄 vite.config.js      # Build Configuration
+```
 
 ### **Prerequisites**
 * Java JDK 17+
@@ -120,21 +121,22 @@ root
 
 ### **The Stack Dashboard**
 <p align="center">
-  <img src="screenshots/dashboard.png" width="600" alt="Main Dashboard">
+  <img src="Screenshots/dashboard.png" width="600" alt="Main Dashboard">
 </p>
 
 ### **The Backend**
 <p align="center">
-  <img src="screenshots/Todo_backend.png" width="600" alt="Main Dashboard">
+  <img src="Screenshots/Todo_backend.png" width="600" alt="Main Dashboard">
 </p>
+
 ### **The Database**
 <p align="center">
-  <img src="screenshots/h2-db.png" width="600" alt="Main Dashboard">
+  <img src="Screenshots/h2-db.png" width="600" alt="Main Dashboard">
 </p>
 
 ### **Priority & Notifications**
 <p align="center">
-  <img src="screenshots/priority.png" width="600" alt="Toast Notifications">
+  <img src="Screenshots/priority.png" width="600" alt="Toast Notifications">
 </p>
 
 ---
