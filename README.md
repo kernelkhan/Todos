@@ -1,66 +1,110 @@
-# 📝 Full-Stack Task Manager
+# 📚 Stack
 
 <p align="center">
-  <img src="screenshots/Todo.png" width="700" title="Task Manager Dashboard">
+  <img src="screenshots/dashboard.png" width="700" alt="Stack Dashboard">
 </p>
 
 <p align="center">
-  A modern, robust Task Manager built with a <strong>Spring Boot</strong> backend and a <strong>React (Vite)</strong> frontend.<br>
-  Features a sleek "Midnight Dark" UI, persistent file-based storage, and full CRUD capabilities.
+  <strong>Push tasks. Pop results.</strong><br>
+  A high-performance, full-stack task management system built for developers.<br>
+  Featuring a "Deep Glass" UI, priority queues, and real-time analytics.
+</p>
+
+<p align="center">
+  <a href="#-key-features">Features</a> •
+  <a href="#%EF%B8%8F-tech-stack">Tech Stack</a> •
+  <a href="#-getting-started">Setup</a> •
+  <a href="#-api-reference">API</a>
 </p>
 
 ---
 
-## 🚀 Features
+## ✨ Key Features
 
-* **Create Tasks**: Add new tasks with titles and optional descriptions.
-* **Search**: Real-time filtering of tasks by title or description.
-* **Smart Filters**: View "All", "Active", or "Completed" tasks.
-* **Inline Editing**: Click any task to edit its title instantly.
-* **Persistence**: Uses H2 file-based storage (`./data/todo_db`) so data survives server restarts.
-* **Bulk Actions**: "Clear All" button to remove all tasks at once.
-* **Responsive UI**: Fully styled with a custom "Midnight Dark" CSS theme.
+### **CORE FUNCTIONALITY**
+* **⚡ Priority Queues**: Organize tasks by **High (🔴)**, **Medium (🟠)**, or **Low (🟢)** priority levels.
+* **📊 Progress Metrics**: Real-time visual dashboard showing completion rates and daily velocity.
+* **📅 Time Management**: Integrated `datetime-local` pickers for precise deadline tracking.
+
+### **UX & DESIGN**
+* **🎨 Deep Glass Architecture**: A modern, dark-mode interface utilizing CSS backdrop filters and gradients.
+* **🔔 Reactive Feedback**: Instant toast notifications (Success/Error/Warning) using `react-hot-toast`.
+* **🔍 Omni-Search**: Client-side filtering to instantly locate tasks by title or description.
+
+### **SYSTEM**
+* **💾 Persistence Layer**: Embedded **H2 Database** ensures data survives server restarts without external setup.
+* **🛡️ Robust Error Handling**: Graceful degradation and user-friendly error messages.
 
 ---
 
 ## 🛠️ Tech Stack
 
-### **Frontend**
-* **React (Vite)**: Fast, modern frontend build tool.
-* **JavaScript (ES6+)**: Component logic.
-* **Axios**: HTTP client for API requests.
-* **CSS3**: Flexbox & Grid for the custom dark theme.
+### **Frontend (Client)**
+* **Framework**: React 18 (Vite)
+* **Styling**: CSS3 Modules (Flexbox, Grid, Glassmorphism)
+* **State Management**: React Hooks (`useState`, `useEffect`)
+* **HTTP Client**: Axios
+* **Notifications**: React Hot Toast
 
-### **Backend**
-* **Spring Boot 3**: REST API development.
-* **Spring Data JPA**: Database abstraction layer.
-* **H2 Database**: File-based SQL database.
-* **Java 17+**: Core language.
+### **Backend (Server)**
+* **Framework**: Spring Boot 3
+* **Language**: Java 17
+* **Database**: H2 (File-Based Mode)
+* **ORM**: Spring Data JPA (Hibernate)
+* **Tooling**: Lombok, Maven
 
 ---
 
 ## ⚙️ Getting Started
 
-Follow these steps to run the project locally.
+Follow these instructions to set up the **Stack** environment locally.
+
+## 📂 Project Structure
+
+A clean, modular architecture separating the Client (Frontend) and Server (Backend).
+
+```bash
+root
+├── 📁 todo-backend (Spring Boot API)
+│   ├── 📁 src/main/java/com/example/todo_backend
+│   │   ├── 📁 controller      # API Endpoints (TodoController.java)
+│   │   ├── 📁 model           # Database Entities (Todo.java)
+│   │   ├── 📁 repository      # JPA Data Access (TodoRepository.java)
+│   │   └── 📄 TodoBackendApplication.java
+│   ├── 📁 src/main/resources
+│   │   └── 📄 application.properties  # Database Config
+│   └── 📄 pom.xml             # Maven Dependencies
+│
+└── 📁 todo-frontend (React Client)
+    ├── 📁 public              # Static Assets
+    ├── 📁 src
+    │   ├── 📁 services        # API Integration (TodoService.js)
+    │   ├── 📄 App.jsx         # Main Dashboard Logic
+    │   ├── 📄 App.css         # Deep Glass Styles
+    │   └── 📄 main.jsx        # Entry Point
+    ├── 📄 package.json        # Node Dependencies
+    └── 📄 vite.config.js      # Build Configuration
 
 ### **Prerequisites**
-* **Java JDK 17** or higher.
-* **Node.js** & **npm**.
-* **IntelliJ IDEA** (recommended for Backend) or VS Code.
+* Java JDK 17+
+* Node.js (v16+) & npm
 
-### **1. Setup the Backend**
-1.  Open the `todo-backend` folder in **IntelliJ IDEA**.
-2.  Allow Maven to download dependencies.
-3.  Navigate to `src/main/resources/application.properties` and verify the database setting:
+### **1. Backend Setup**
+1.  Clone the repository and open `todo-backend`.
+2.  Configure the database in `src/main/resources/application.properties`:
     ```properties
     spring.datasource.url=jdbc:h2:file:./data/todo_db
+    spring.jpa.hibernate.ddl-auto=update
     ```
-4.  Run the `TodoBackendApplication.java` file.
-5.  The server will start on **http://localhost:8080**.
+3.  Run the application:
+    ```bash
+    ./mvnw spring-boot:run
+    ```
+4.  The API will launch at `http://localhost:8080`.
 
-### **2. Setup the Frontend**
-1.  Open the `todo-frontend` folder in **VS Code**.
-2.  Open the terminal (`Ctrl + ` `) and install dependencies:
+### **2. Frontend Setup**
+1.  Navigate to the `todo-frontend` directory.
+2.  Install dependencies:
     ```bash
     npm install
     ```
@@ -68,40 +112,47 @@ Follow these steps to run the project locally.
     ```bash
     npm run dev
     ```
-4.  Open your browser to **http://localhost:5173**.
+4.  Access the dashboard at `http://localhost:5173`.
 
 ---
 
 ## 📸 Screenshots
 
-### Task Manager UI & Search
+### **The Stack Dashboard**
 <p align="center">
-  <img src="screenshots/Todo.png" width="600">
+  <img src="screenshots/dashboard1.png" width="600" alt="Main Dashboard">
 </p>
 
-### H2 Database Console (Backend View)
+### **Priority & Notifications**
 <p align="center">
-  <img src="screenshots/h2 db" width="600">
+  <img src="screenshots/notifications.png" width="600" alt="Toast Notifications">
 </p>
 
 ---
 
-## 📂 Project Structure
+## 🔌 API Reference
 
-```bash
-root/
-├── todo-backend/             # Spring Boot Application
-│   ├── src/main/java/        # Controllers, Services, Repositories, Entities
-│   ├── src/main/resources/   # application.properties (DB config)
-│   └── data/                 # Auto-generated database file
-│
-└── todo-frontend/            # React Application
-    ├── src/
-    │   ├── services/         # API connection logic
-    │   ├── App.jsx           # Main UI Logic
-    │   └── App.css           # Midnight Dark Theme Styles
-    └── vite.config.js        # Build configuration
-```
+**Base URL:** `http://localhost:8080/api/todos`
+
+| Method | Endpoint | Description | Payload |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/` | Retrieve entire stack | - |
+| `POST` | `/` | Push new task | `{ "title": "Code", "priority": "High" }` |
+| `PUT` | `/{id}` | Update/Pop task | `{ "completed": true }` |
+| `DELETE` | `/{id}` | Remove task | - |
+
+---
+
+## 🤝 Contributing
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/NewFeature`)
+3.  Commit your Changes (`git commit -m 'Add some NewFeature'`)
+4.  Push to the Branch (`git push origin feature/NewFeature`)
+5.  Open a Pull Request
+
+---
+
 
 ## 🗄️ Database Access
 You can view the raw data using the H2 Console while the backend is running.
@@ -110,6 +161,10 @@ Driver Class: org.h2.Driver
 JDBC URL: jdbc:h2:file:./data/todo_db
 User Name: sa
 Password: (Leave Empty)
+
+## 👤 Author
+
+Built with 💻 and ☕ by **Talmeez Ahmad Khan**.
 
 ## License
 Distributed under the MIT License.
