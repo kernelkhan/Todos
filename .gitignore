@@ -1,0 +1,32 @@
+# Maven
+target/
+*.jar
+*.war
+*.ear
+
+# Node
+node_modules/
+dist/
+.vite/
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Database
+*.db
+*.mv.db
+
+# OS
+.DS_Store
+Thumbs.db
+~$*
+
+# Logs
+*.log
+npm-debug.log*
