@@ -120,12 +120,21 @@ root
 
 ### **The Stack Dashboard**
 <p align="center">
-  <img src="screenshots/dashboard1.png" width="600" alt="Main Dashboard">
+  <img src="screenshots/dashboard.png" width="600" alt="Main Dashboard">
+</p>
+
+
+<p align="center">
+  <img src="screenshots/Todo_backend.png" width="600" alt="Main Dashboard">
+</p>
+
+<p align="center">
+  <img src="screenshots/h2-db.png" width="600" alt="Main Dashboard">
 </p>
 
 ### **Priority & Notifications**
 <p align="center">
-  <img src="screenshots/notifications.png" width="600" alt="Toast Notifications">
+  <img src="screenshots/priority.png" width="600" alt="Toast Notifications">
 </p>
 
 ---
